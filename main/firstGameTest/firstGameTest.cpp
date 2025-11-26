@@ -46,7 +46,7 @@ void showGuideMenu() {
 }
 
 void showLanguageMenu() {
-	clearScreen();
+	clearScreen(); 
 	cout << R"(
  __          ___      .__   __.   _______  __    __       ___       _______  _______ 
 |  |        /   \     |  \ |  |  /  _____||  |  |  |     /   \     /  _____||   ____|
@@ -56,7 +56,17 @@ void showLanguageMenu() {
 |_______/__/     \__\ |__| \__|  \______|  \______/  /__/     \__\ \______| |_______|
 
 	)";
+	cout << "Please select your preferred language:" << endl;
+	cout << "1. English" << endl;
+	cout << "2. Bulgarian" << endl;
+    cout << "3. Deutsch" << endl;
+    cout << endl;
+    cout << "\033[33mLanguage(digit) >> \033[0m";
 
+}
+void showLanguageMenuPart2() {
+    cout << "\033[33mTo go back to the GAME MENU enter - GM\033[0m" << endl;
+    cout << "\033[34mYour input:\033[0m ";
 }
 
 void showDifficultyMenu() {
@@ -126,6 +136,19 @@ int main() {
                 if (input == "GM") {
                     break;
                 }
+                else if (input == "1") {
+                    cout << "Language set to English." << endl;
+                    showLanguageMenuPart2();
+                }
+                else if (input == "2") {
+                    cout << "Езикът е настроен на Български." << endl;
+                    showLanguageMenuPart2();
+                }
+                else if (input == "3") {
+                    cout << "Sprache auf Deutsch eingestellt." << endl;
+                    showLanguageMenuPart2();
+                }
+				else
                 cout << "Unknown command. Try again." << endl;
             }
         }
