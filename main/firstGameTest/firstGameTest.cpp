@@ -9,18 +9,20 @@ void clearScreen() {
 void showMainMenu(const string & title, const string & playerName) {
 	clearScreen();
 	cout << title << endl;
-	cout << "By SpectralCore Games\n";
-	cout << "------------------------\n\n";
-	cout << "Welcome to the game, " << playerName << "!\n\n";
-
-	cout << "\033[33mGame menu\033[0m\n";
-	cout << "Guide\n";
-	cout << "Language\n";
-	cout << "Game difficulty\n";
-	cout << "Graphics settings\n";
-	cout << "Sound settings\n";
-	cout << "Start Game\n\n";
-	cout << "\033[34mEnter menu:\033[0m ";
+	cout << "By SpectraCore Games" << endl;
+	cout << "------------------------" << endl;
+	cout << endl;
+	cout << "Welcome to the game, " << playerName << "!" << endl;
+	cout << endl;
+	cout << "\033[33mGame menu\033[0m" << endl;
+	cout << "------------------------" << endl;
+	cout << "1. Guide" << endl;
+	cout << "2. Language" << endl;
+	cout << "3. Game difficulty" << endl;
+	cout << "4. Start Game" << endl;
+	cout << "5. Quit Game" << endl;
+	cout << endl;
+	cout << "\033[34mEnter menu (You can use a digit too):\033[0m ";
 }
 
 void showGuideMenu() {
@@ -94,12 +96,12 @@ void showDifficultyMenuPart2(){
 
 int main() {
 	string title = R"(
-         _______..______    _______   ______ .___________..______          ___       __                                                       
-        /       ||   _  \  |   ____| /      ||           ||   _  \        /   \     |  |                                                      
-       |   (----`|  |_)  | |  |__   |  ,----'`---|  |----`|  |_)  |      /  ^  \    |  |                                                      
-        \   \    |   ___/  |   __|  |  |         |  |     |      /      /  /_\  \   |  |                                                      
-    .----)   |   |  |      |  |____ |  `----.    |  |     |  |\  \----./  _____  \  |  `----.                                                 
-    |_______/    | _|      |_______| \______|    |__|     | _| `._____/__/     \__\ |_______|                                                 
+         _______..______    _______   ______ .___________..______          ___                                                        
+        /       ||   _  \  |   ____| /      ||           ||   _  \        /   \                                                      
+       |   (----`|  |_)  | |  |__   |  ,----'`---|  |----`|  |_)  |      /  ^  \                                                      
+        \   \    |   ___/  |   __|  |  |         |  |     |      /      /  /_\  \                                                       
+    .----)   |   |  |      |  |____ |  `----.    |  |     |  |\  \----./  _____  \                                                   
+    |_______/    | _|      |_______| \______|    |__|     | _| `._____/__/     \__\                                             
                                                                                                                                           
     ____    __    ____  ______   .______       _______          _______  __    __   _______     _______.     _______. __  .__   __.   _______ 
     \   \  /  \  /   / /  __  \  |   _  \     |       \        /  _____||  |  |  | |   ____|   /       |    /       ||  | |  \ |  |  /  _____|
@@ -123,7 +125,7 @@ int main() {
         getline(cin, input);
 
         // ----- GUIDE -----
-        if (input == "Guide" || input == "guide") {
+        if (input == "Guide" || input == "guide" || input == "1") {
 
             while (true) {
                 showGuideMenu();
@@ -138,7 +140,7 @@ int main() {
         }
 
         // ----- LANGUAGE -----
-        else if (input == "Language" || input == "language") {
+        else if (input == "Language" || input == "language" || input == "2") {
             clearScreen();
 			showLanguageMenu();
             while (true) {
@@ -164,7 +166,7 @@ int main() {
         }
 
         // ----- DIFFICULTY -----
-        else if (input == "Game difficulty" || input == "difficulty" || input == "Game Difficulty" || input == "game difficulty" || input == "GAME DIFFICULTY") {
+        else if (input == "Game difficulty" || input == "difficulty" || input == "Game Difficulty" || input == "game difficulty" || input == "GAME DIFFICULTY" || input == "3") {
             clearScreen();
 			showDifficultyMenu();
             while (true) {
@@ -196,11 +198,18 @@ int main() {
         }
 
 		// start game
-        else if (input == "Start Game" || input == "start game" || input == "Start game") {
+        else if (input == "Start Game" || input == "start game" || input == "Start game" || input == "4") {
             clearScreen();
             cout << "Starting the game..." << endl;
-            break; // тук може да стартираш логика на играта
+            break; 
         }
+
+        // ----- QUIT GAME -----
+        else if (input == "Quit Game" || input == "quit game" || input == "Quit game" || input == "5") {
+            clearScreen();
+            cout << "Quitting the game. Goodbye, " << playerName << "!" << endl;
+            break;
+		}
 
         else {
             cout << "Invalid menu option. Try again." << endl;
