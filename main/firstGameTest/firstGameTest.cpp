@@ -56,7 +56,7 @@ void showLanguageMenu() {
 |_______/__/     \__\ |__| \__|  \______|  \______/  /__/     \__\ \______| |_______|
 
 	)";
-	cout << "Please select your preferred language:" << endl;
+	cout << "Please select your preferred language for the word:" << endl;
 	cout << "1. English" << endl;
 	cout << "2. Bulgarian" << endl;
     cout << "3. Deutsch" << endl;
@@ -79,8 +79,18 @@ void showDifficultyMenu() {
 |  |__| |  /  _____  \  |  |  |  | |  |____       |  '--'  ||  | |  |     |  |     |  | |  `----.|  `--'  | |  `----.    |  |         |  |    
  \______| /__/     \__\ |__|  |__| |_______|      |_______/ |__| |__|     |__|     |__|  \______| \______/  |_______|    |__|         |__|    
 	)";
+    cout << "Please select your prefered difficulty" << endl;
+    cout << "1. Easy" << endl;
+    cout << "2. Normal" << endl;
+    cout << "3. Hard" << endl;
+    cout << "3. Extreme" << endl;
+    cout << endl;
+    cout << "Select difficulty (digit) >>";
 }
-
+void showDifficultyMenuPart2(){
+    cout << "\033[33mTo go back to the GAME MENU enter - GM\033[0m" << endl;
+    cout << "\033[34mYour input:\033[0m ";
+}
 
 int main() {
 	string title = R"(
@@ -119,7 +129,7 @@ int main() {
                 showGuideMenu();
                 getline(cin, input);
 
-                if (input == "GM") {
+                if (input == "GM" || input == "gm" || input == "Gm") {
                     break;
                 }
 
@@ -133,7 +143,7 @@ int main() {
 			showLanguageMenu();
             while (true) {
                 getline(cin, input);
-                if (input == "GM") {
+                if (input == "GM" || input == "gm" || input == "Gm") {
                     break;
                 }
                 else if (input == "1") {
@@ -141,7 +151,7 @@ int main() {
                     showLanguageMenuPart2();
                 }
                 else if (input == "2") {
-                    cout << "Езикът е настроен на Български." << endl;
+                    cout << "Language set to Bulgarian." << endl;
                     showLanguageMenuPart2();
                 }
                 else if (input == "3") {
@@ -159,15 +169,34 @@ int main() {
 			showDifficultyMenu();
             while (true) {
                 getline(cin, input);
-                if (input == "GM") {
+                if (input == "GM" || input == "gm" || input == "Gm") {
                     break;
                 }
-                cout << "Unknown command. Try again." << endl;
+                else if(input == "1"){
+                    cout << "Difficulty set to easy" << endl;
+                    showDifficultyMenuPart2();
+                }
+                else if (input == "2") {
+                    cout << "Difficulty set to normal" << endl;
+                    showDifficultyMenuPart2();
+                }
+                else if (input == "3") {
+                    cout << "Difficulty set to hard" << endl;
+                    showDifficultyMenuPart2();
+                }
+                else if (input == "4") {
+                    cout << "Difficulty set to extreme" << endl;
+                    showDifficultyMenuPart2();
+                }
+                else {
+                    cout << "Unknown command. Try again." << endl;
+
+                }
             }
         }
 
 		// start game
-        else if (input == "Start Game") {
+        else if (input == "Start Game" || input == "start game" || input == "Start game") {
             clearScreen();
             cout << "Starting the game..." << endl;
             break; // тук може да стартираш логика на играта
