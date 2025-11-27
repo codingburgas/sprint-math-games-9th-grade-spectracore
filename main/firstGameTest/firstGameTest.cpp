@@ -21,6 +21,7 @@ void showMainMenu(const string & title, const string & playerName) {
 	cout << "3. Game difficulty" << endl;
 	cout << "4. Start Game" << endl;
 	cout << "5. Quit Game" << endl;
+	cout << "6. Credits" << endl;
 	cout << endl;
 	cout << "\033[34mEnter menu (You can use a digit too):\033[0m ";
 }
@@ -90,6 +91,26 @@ void showDifficultyMenu() {
     cout << "Select difficulty (digit) >>";
 }
 void showDifficultyMenuPart2(){
+    cout << "\033[33mTo go back to the GAME MENU enter - GM\033[0m" << endl;
+    cout << "\033[34mYour input:\033[0m ";
+}
+
+void showCreditsMenu() {
+    clearScreen();
+    cout << R"(
+    ______ .______       _______  _______   __  .___________.    _______.
+   /      ||   _  \     |   ____||       \ |  | |           |   /       |
+  |  ,----'|  |_)  |    |  |__   |  .--.  ||  | `---|  |----`  |   (----`
+  |  |     |      /     |   __|  |  |  |  ||  |     |  |        \   \    
+  |  `----.|  |\  \----.|  |____ |  '--'  ||  |     |  |    .----)   |   
+   \______|| _| `._____||_______||_______/ |__|     |__|    |_______/  
+    )";
+    cout << endl;
+    cout << "Game developed by SpectraCore Games." << endl;
+    cout << "Lead Developer: [Your Name]" << endl;
+    cout << "Graphics Designer: [Designer Name]" << endl;
+    cout << "Special Thanks to: [Special Thanks Names]" << endl;
+    cout << endl;
     cout << "\033[33mTo go back to the GAME MENU enter - GM\033[0m" << endl;
     cout << "\033[34mYour input:\033[0m ";
 }
@@ -210,6 +231,19 @@ int main() {
             cout << "Quitting the game. Goodbye, " << playerName << "!" << endl;
             break;
 		}
+
+        // ----- CREDITS -----
+        else if (input == "Credits" || input == "credits" || input == "6") {
+            clearScreen();
+			showCreditsMenu();
+            while (true) {
+                getline(cin, input);
+                if (input == "GM" || input == "gm" || input == "Gm") {
+                    break;
+                }
+                cout << "Unknown command. Try again." << endl;
+            }
+        }
 
         else {
             cout << "Invalid menu option. Try again." << endl;
