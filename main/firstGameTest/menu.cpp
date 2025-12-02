@@ -86,7 +86,7 @@ void showDifficultyMenu() {
 	cout << "1. Easy" << endl;
 	cout << "2. Normal" << endl;
 	cout << "3. Hard" << endl;
-	cout << "3. Extreme" << endl;
+	cout << "4. Extreme" << endl;
 	cout << endl;
 	cout << "Select difficulty (digit) >>";
 }
