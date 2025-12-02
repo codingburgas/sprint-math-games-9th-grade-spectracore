@@ -69,8 +69,9 @@ int main() {
                     cout << "Sprache auf Deutsch eingestellt." << endl;
                     showLanguageMenuPart2();
                 }
-				else
-                cout << "Unknown command. Try again." << endl;
+                else {
+                    cout << "Unknown command. Try again." << endl;
+                }
             }
         }
 
