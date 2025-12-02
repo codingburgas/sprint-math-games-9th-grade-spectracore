@@ -1,10 +1,9 @@
 #pragma once
-#include<string>
-using namespace std;
+#include <string>
 
 void clearScreen();
 
-void showMainMenu(const string& title, const string& playerName);
+void showMainMenu(const std::string& title, const std::string& playerName);
 void showGuideMenu();
 void showLanguageMenu();
 void showLanguageMenuPart2();
