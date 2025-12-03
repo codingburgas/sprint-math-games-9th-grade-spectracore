@@ -18,40 +18,85 @@ int getMaxAttempts(int difficulty) {
     }
 }
 
-string pickRandomWord(int difficulty) {
-    static const vector<string> easyWords = {
+string pickRandomWord(const string& language, int difficulty) {
+
+    static const vector<string> enEasy = {
         "apple", "chair", "table", "mouse", "house",
         "green", "light", "water", "phone", "pizza"
     };
 
-    static const vector<string> normalWords = {
+    static const vector<string> enNormal = {
         "cable", "world", "train", "frame", "cloud",
         "dream", "sugar", "metal", "coast", "storm"
     };
 
-    static const vector<string> hardWords = {
+    static const vector<string> enHard = {
         "crypt", "glyph", "knock", "squad", "jelly",
         "flame", "sharp", "pride", "brave", "score"
     };
 
-    static const vector<string> extremeWords = {
+    static const vector<string> enExtreme = {
         "zebra", "quake", "vivid", "xenon", "jazzy",
         "fjord", "whack", "nymph", "glyph", "azure"
     };
 
-    const vector<string>* list;
 
-    switch (difficulty) {
-    case 1: list = &easyWords; break;
-    case 2: list = &normalWords; break;
-    case 3: list = &hardWords; break;
-    case 4: list = &extremeWords; break;
-    default: list = &normalWords; break;
+    static const vector<string> deEasy = {
+        "apfel", "stuhl", "lampe", "tisch", "wolke",
+        "radio", "farbe", "essen", "reise", "licht"
+    };
+
+    static const vector<string> deNormal = {
+        "wolke", "reise", "asche", "traum", "konto",
+        "radio", "licht", "nacht", "stern", "hafen"
+    };
+
+    static const vector<string> deHard = {
+        "druck", "strom", "klang", "griff", "spalt",
+        "blatt", "sturm", "pferd", "kabel", "boden"
+    };
+
+    static const vector<string> deExtreme = {
+        "zebra", "qualm", "vital", "joker", "fjord",
+        "rauch", "maske", "kurve", "punkt", "quarz"
+    };
+
+
+    const vector<string>* list = nullptr;
+
+    if (language == "English") {
+        switch (difficulty) {
+        case 1: list = &enEasy;    break;
+        case 2: list = &enNormal;  break;
+        case 3: list = &enHard;    break;
+        case 4: list = &enExtreme; break;
+        default: list = &enNormal; break;
+        }
+    }
+    else if (language == "German") {
+        switch (difficulty) {
+        case 1: list = &deEasy;    break;
+        case 2: list = &deNormal;  break;
+        case 3: list = &deHard;    break;
+        case 4: list = &deExtreme; break;
+        default: list = &deNormal; break;
+        }
+    }
+    else {
+        switch (difficulty) {
+        case 1: list = &enEasy;    break;
+        case 2: list = &enNormal;  break;
+        case 3: list = &enHard;    break;
+        case 4: list = &enExtreme; break;
+        default: list = &enNormal; break;
+        }
     }
 
     int idx = rand() % list->size();
     return (*list)[idx];
 }
+
+
 string makeFeedback(const string& secret, const string& guess) {
     int n = secret.size();
     string fb(n, '_');
@@ -91,7 +136,7 @@ string makeFeedback(const string& secret, const string& guess) {
 
 struct GuessResult {
     string guess;
-    string feedback; 
+    string feedback;
 };
 
 void renderBoard(const vector<GuessResult>& history, int attemptsLeft) {
@@ -121,7 +166,7 @@ void renderBoard(const vector<GuessResult>& history, int attemptsLeft) {
 void playWordle(const string& language, int difficulty) {
     const int WORD_LENGTH = 5;
     int maxAttempts = getMaxAttempts(difficulty);
-    string secret = pickRandomWord(difficulty);
+    string secret = pickRandomWord(language, difficulty);
     vector<GuessResult> history;
     int attemptsLeft = maxAttempts;
 
@@ -158,13 +203,14 @@ void playWordle(const string& language, int difficulty) {
             getline(cin, dummy);
             continue;
         }
+
         string fb = makeFeedback(secret, guess);
         history.push_back({ guess, fb });
 
         if (guess == secret) {
             clearScreen();
             renderBoard(history, attemptsLeft - 1);
-            cout << "🎉 Congratulations! You guessed the word: " << secret << endl;
+            cout << "Congratulations! You guessed the word: " << secret << endl;
             cout << "Press Enter to return to the menu...";
             string dummy;
             getline(cin, dummy);
@@ -182,9 +228,9 @@ void playWordle(const string& language, int difficulty) {
     getline(cin, dummy);
 }
 
-// ------------ MAIN ------------
 
 int main() {
+
     srand(static_cast<unsigned>(time(nullptr)));
 
     string title = R"(
@@ -210,7 +256,7 @@ int main() {
     string input;
 
     string language = "English";
-    int difficulty = 2; 
+    int difficulty = 2; // normal difficulty by default
 
     while (true) {
 
@@ -295,7 +341,7 @@ int main() {
             }
         }
 
-        // ----- START GAME -----
+        // start game
         else if (input == "Start Game" || input == "start game" || input == "Start game" || input == "4") {
             clearScreen();
             cout << "Starting the game..." << endl;
