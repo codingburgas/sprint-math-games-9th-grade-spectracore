@@ -61,8 +61,7 @@ void showLanguageMenu() {
 	)";
 	cout << "Please select your preferred language for the word:" << endl;
 	cout << "1. English" << endl;
-	cout << "2. Bulgarian" << endl;
-	cout << "3. Deutsch" << endl;
+	cout << "2. Deutsch" << endl;
 	cout << endl;
 	cout << "\033[33mLanguage(digit) >> \033[0m";
 
@@ -107,11 +106,11 @@ void showCreditsMenu() {
     )";
 	cout << endl;
 	cout << "Game developed by SpectraCore Games." << endl;
-	cout << "Lead Developer: [Your Name]" << endl;
-	cout << "Graphics Designer: [Designer Name]" << endl;
-	cout << "Special Thanks to: [Special Thanks Names]" << endl;
+	cout << "Scrum delevoper: Antonio Ivanov" << endl;
+	cout << "Front-end developer: Georgi Georgiev" << endl;
+	cout << "Backend developer: Ivan Lapchev" << endl;
+	cout << "Designer: Stoyan Savakov" << endl;
 	cout << endl;
 	cout << "\033[33mTo go back to the GAME MENU enter - GM\033[0m" << endl;
 	cout << "\033[34mYour input:\033[0m ";
 }
-
