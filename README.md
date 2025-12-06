@@ -1,4 +1,6 @@
-<img src="media/SpectraCore_logo.png" width="120">
+<p align="center">
+  <img src="media/SpectraCore_logo.png" width="250">
+</p>
 
 # SpectraCore
 
