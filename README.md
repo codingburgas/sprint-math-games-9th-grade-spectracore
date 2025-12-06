@@ -1,3 +1,5 @@
+<img src="media/SpectraCore_logo.png" width="120">
+
 # SpectraCore
 
 SpectraCore is a collaborative software development project created by a multidisciplinary team, using modern technologies, structured workflows, and the Scrum methodology to ensure efficiency, clarity, and continuous improvement.
