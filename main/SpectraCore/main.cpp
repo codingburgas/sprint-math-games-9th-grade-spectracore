@@ -164,10 +164,13 @@ void renderBoard(const vector<GuessResult>& history, int attemptsLeft) {
 
 void playWordle(const string& language, int difficulty) {
     const int WORD_LENGTH = 5;
+	int streak = 0;
     int maxAttempts = getMaxAttempts(difficulty);
     string secret = pickRandomWord(language, difficulty);
     vector<GuessResult> history;
     int attemptsLeft = maxAttempts;
+
+	time_t startTime = time(0);
 
     while (attemptsLeft > 0) {
         clearScreen();
@@ -207,9 +210,18 @@ void playWordle(const string& language, int difficulty) {
         history.push_back({ guess, fb });
 
         if (guess == secret) {
+			time_t endTime = time(0);
+			int elapsed = endTime - startTime;
+            streak++;
+
             clearScreen();
+
             renderBoard(history, attemptsLeft - 1);
+
             cout << "Congratulations! You guessed the word: " << secret << endl;
+			cout << "Time taken: " << elapsed << " seconds" << endl;
+			cout << "Current wining streak: " << streak << endl;
+
             cout << "Press Enter to return to the menu...";
             string temp;
             getline(cin, temp);
@@ -221,10 +233,13 @@ void playWordle(const string& language, int difficulty) {
 
     clearScreen();
     renderBoard(history, 0);
+	streak = 0;
     cout << "No attempts left. The word was: " << secret << endl;
+	cout << "Your streak has been reset." << endl;
     cout << "Press Enter to return to the menu...";
     string temp;
     getline(cin, temp);
+
 }
 
 
