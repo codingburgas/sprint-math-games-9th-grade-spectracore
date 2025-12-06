@@ -82,6 +82,7 @@ void showDifficultyMenu() {
  \______| /__/     \__\ |__|  |__| |_______|      |_______/ |__| |__|     |__|     |__|  \______| \______/  |_______|    |__|         |__|    
 	)";
 	cout << "Please select your prefered difficulty" << endl;
+	cout << "The default difficulty is Normal" << endl;
 	cout << "1. Easy" << endl;
 	cout << "2. Normal" << endl;
 	cout << "3. Hard" << endl;

@@ -3,7 +3,6 @@
 #include <vector>
 #include <ctime>
 #include <cctype>
-#include <algorithm>
 #include "menu.h"
 using namespace std;
 
@@ -58,7 +57,7 @@ string pickRandomWord(const string& language, int difficulty) {
 
     static const vector<string> deExtreme = {
         "zebra", "qualm", "vital", "joker", "fjord",
-        "rauch", "maske", "kurve", "punkt", "quarz"
+        "rauch", "maske", "verwirrt", "punkt", "quarz"
     };
 
 
@@ -192,15 +191,15 @@ void playWordle(const string& language, int difficulty) {
         if (guess == "exit") {
             cout << "You gave up! The word was: " << secret << endl;
             cout << "Press Enter to return to the menu...";
-            string dummy;
-            getline(cin, dummy);
+            string temp;
+            getline(cin, temp);
             return;
         }
 
         if ((int)guess.size() != WORD_LENGTH) {
             cout << "Your guess must be exactly " << WORD_LENGTH << " letters. Press Enter to try again...";
-            string dummy;
-            getline(cin, dummy);
+            string temp;
+            getline(cin, temp);
             continue;
         }
 
@@ -212,8 +211,8 @@ void playWordle(const string& language, int difficulty) {
             renderBoard(history, attemptsLeft - 1);
             cout << "Congratulations! You guessed the word: " << secret << endl;
             cout << "Press Enter to return to the menu...";
-            string dummy;
-            getline(cin, dummy);
+            string temp;
+            getline(cin, temp);
             return;
         }
 
@@ -224,8 +223,8 @@ void playWordle(const string& language, int difficulty) {
     renderBoard(history, 0);
     cout << "No attempts left. The word was: " << secret << endl;
     cout << "Press Enter to return to the menu...";
-    string dummy;
-    getline(cin, dummy);
+    string temp;
+    getline(cin, temp);
 }
 
 
