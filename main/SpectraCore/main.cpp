@@ -6,6 +6,7 @@
 #include "menu.h"
 using namespace std;
 
+int streak = 0;
 
 int getMaxAttempts(int difficulty) {
     switch (difficulty) {
@@ -163,8 +164,7 @@ void renderBoard(const vector<GuessResult>& history, int attemptsLeft) {
 }
 
 void playWordle(const string& language, int difficulty) {
-    const int WORD_LENGTH = 5;
-	int streak = 0;
+    const int wordLength = 5;
     int maxAttempts = getMaxAttempts(difficulty);
     string secret = pickRandomWord(language, difficulty);
     vector<GuessResult> history;
@@ -176,7 +176,7 @@ void playWordle(const string& language, int difficulty) {
         clearScreen();
 
         cout << "====== WORDLE ======" << endl;
-        cout << "(Secret word is " << WORD_LENGTH << " letters)" << endl;
+        cout << "(Secret word is " << wordLength << " letters)" << endl;
         cout << "(Type 'exit' to give up)" << endl << endl;
 
         renderBoard(history, attemptsLeft);
@@ -199,8 +199,8 @@ void playWordle(const string& language, int difficulty) {
             return;
         }
 
-        if ((int)guess.size() != WORD_LENGTH) {
-            cout << "Your guess must be exactly " << WORD_LENGTH << " letters. Press Enter to try again...";
+        if ((int)guess.size() != wordLength) {
+            cout << "Your guess must be exactly " << wordLength << " letters. Press Enter to try again...";
             string temp;
             getline(cin, temp);
             continue;
