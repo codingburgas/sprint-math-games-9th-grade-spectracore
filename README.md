@@ -21,8 +21,9 @@ SpectraCore is a collaborative software development project created by a multidi
 
 ## 📝 Documentation and presentation
 
-- <a href="https://codingburgas-my.sharepoint.com/:w:/g/personal/aiivanov24_codingburgas_bg/IQBSoAIiWgfPRY74GXC5g-8aAb6MKNFpEW_jJcSHoqr3JH4?e=bWqKWn"> Documentation </a>
-- <a href="https://codingburgas-my.sharepoint.com/:p:/g/personal/aiivanov24_codingburgas_bg/IQAFSR5QpqkoTpprK7c__RsqAZUqW2vvqZveFq7i6ldi_EI?e=qRyL1x"> Presentation </a>
+- <a href="https://codingburgas-my.sharepoint.com/:w:/g/personal/aiivanov24_codingburgas_bg/IQBSoAIiWgfPRY74GXC5g-8aAb6MKNFpEW_jJcSHoqr3JH4?e=bWqKWn">Documentation</a>
+- <a href="https://codingburgas-my.sharepoint.com/:p:/g/personal/aiivanov24_codingburgas_bg/IQAFSR5QpqkoTpprK7c__RsqAZUqW2vvqZveFq7i6ldi_EI?e=qRyL1x">Presentation</a>
+
 ---
 
 ## 🧰 Technologies & Tools
@@ -52,6 +53,24 @@ SpectraCore is a collaborative software development project created by a multidi
 
 <img src="https://www.d-id.com/wp-content/uploads/2023/04/1656733637logo-canva-png.png" width="120">
 
-- **Canva** – used for presentation design and visual assets.
+- **Canva** – used to design the presentation.
 
 ---
+
+### 🎨 Design Tools
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Microsoft_Office_PowerPoint_%282025%E2%80%93present%29.svg/1200px-Microsoft_Office_PowerPoint_%282025%E2%80%93present%29.svg.png" width="120">
+
+- **Powerpoint** – used to create the presentation.
+
+---
+
+## ▶️ How to Run the Project
+
+Follow these steps to run **SpectraCore** locally:
+
+### Clone the Repository, open it in Visual Studio, build the program and enjoy!
+```bash
+git clone https://github.com/codingburgas/sprint-math-games-9th-grade-spectracore.git
+cd SpectraCore
+
