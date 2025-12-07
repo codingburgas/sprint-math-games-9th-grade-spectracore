@@ -11,7 +11,7 @@ struct GuessResult {
 	string guess;
 	string feedback;
 };
-int getMaxAttemtsts(int difficulty);
+int getMaxAttempts(int difficulty);
 string pickRandomWord(const string& language, int difficulty);
 string makeFeedback(const string& secret, const string& guess);
 void renderBoard(const vector<GuessResult>& history, int attemptsLeft);

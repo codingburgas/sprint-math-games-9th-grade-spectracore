@@ -135,10 +135,6 @@ string makeFeedback(const string& secret, const string& guess) {
     return fb;
 }
 
-struct GuessResult {
-    string guess;
-    string feedback;
-};
 
 void renderBoard(const vector<GuessResult>& history, int attemptsLeft) {
     cout << "Attempts left: " << attemptsLeft << endl;

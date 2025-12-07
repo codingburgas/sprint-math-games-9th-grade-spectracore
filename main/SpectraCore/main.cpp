@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "menu.h"
+#include "gameFunctions.h"
 using namespace std;
 
 int main() {
