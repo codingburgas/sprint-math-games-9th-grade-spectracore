@@ -19,6 +19,12 @@ SpectraCore is a collaborative software development project created by a multidi
 
 ---
 
+## 📝 Documentation and presentation
+
+- <a href="https://codingburgas-my.sharepoint.com/:w:/g/personal/aiivanov24_codingburgas_bg/IQBSoAIiWgfPRY74GXC5g-8aAb6MKNFpEW_jJcSHoqr3JH4?e=bWqKWn"> Documentation </a>
+- <a href="https://codingburgas-my.sharepoint.com/:p:/g/personal/aiivanov24_codingburgas_bg/IQAFSR5QpqkoTpprK7c__RsqAZUqW2vvqZveFq7i6ldi_EI?e=qRyL1x"> Presentation </a>
+---
+
 ## 🧰 Technologies & Tools
 
 ### 🖥️ Programming Languages
@@ -36,7 +42,7 @@ SpectraCore is a collaborative software development project created by a multidi
 
 ### 📝 Documentation
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Microsoft_Office_Word_%282019%E2%80%93present%29.svg/1200px-Microsoft_Office_Word_%282019%E2%80%93present%29.svg.png" width="120">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Microsoft_Office_Word_%282025%E2%80%93present%29.svg/1166px-Microsoft_Office_Word_%282025%E2%80%93present%29.svg.png" width="100">
 
 - **Microsoft Word** – used for documentation, planning, and reports.
 
@@ -44,7 +50,7 @@ SpectraCore is a collaborative software development project created by a multidi
 
 ### 🎨 Design Tools
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Canva_Logo.svg/2560px-Canva_Logo.svg.png" width="150">
+<img src="https://www.d-id.com/wp-content/uploads/2023/04/1656733637logo-canva-png.png" width="120">
 
 - **Canva** – used for presentation design and visual assets.
 
